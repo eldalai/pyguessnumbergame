@@ -6,8 +6,8 @@ class Computer(object):
 	guessNumber = ""
 
 	def __init__(self):
-		guessNumber = self.generatePosibleNumber()
-		while not numbersUtil.isCorrect(guessNumber):
+		self.guessNumber = self.generatePosibleNumber()
+		while not numbersUtil.isCorrect(self.guessNumber):
 			self.guessNumber = self.generatePosibleNumber()
 
 	def generatePosibleNumber(self):
