@@ -26,6 +26,9 @@ def regularNumbers(number, other):
 	return regulars
 
 def isCorrect(number):
+	if len(number) != 4:
+		print "is not Correct, %s is not 4 character long..." % number
+		return False
 	listNumber = list(number)
 	for indexNumber in xrange(0, 3):
 		if listNumber[indexNumber] < "0" or listNumber[indexNumber] > "9" :

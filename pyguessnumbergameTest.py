@@ -37,6 +37,11 @@ class Test(unittest.TestCase):
     	number = "1A34"
     	self.assertFalse( numbersUtil.isCorrect( number ) )	
 
+    	number = "134"
+    	self.assertFalse( numbersUtil.isCorrect( number ) )	
+    	number = "13456"
+    	self.assertFalse( numbersUtil.isCorrect( number ) )	
+
 
 if __name__ == "__main__":
     #import sys;sys.argv = ['', 'Test.testName']
