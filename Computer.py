@@ -9,6 +9,7 @@ class Computer(object):
 		self.guessNumber = self.generatePosibleNumber()
 		while not numbersUtil.isCorrect(self.guessNumber):
 			self.guessNumber = self.generatePosibleNumber()
+		print "GuessNumber is %s" % self.guessNumber	
 
 	def generatePosibleNumber(self):
 		posibleGuessNumber = str(random.randint(123, 9876))
