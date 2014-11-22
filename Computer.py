@@ -20,7 +20,7 @@ class Computer(object):
 	def setNumber(self, number):
 		self.guessNumber = number
 
-	def play(self, number):
+	def ask(self, number):
 		if self.guessNumber == "":
 			self.generateNumber()
 		goods = numbersUtil.goodNumbers(self.guessNumber, number)

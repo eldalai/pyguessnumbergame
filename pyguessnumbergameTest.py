@@ -51,19 +51,19 @@ class Test(unittest.TestCase):
         with mock.patch('Computer.Computer.generatePosibleNumber', return_value='1234'):
             computer = Computer()
             # computer.setNumber("1234")
-            goods, regulars = computer.play("1567")  # 1 good
+            goods, regulars = computer.ask("1567")  # 1 good
             self.assertEqual(1, goods)
             self.assertEqual(0, regulars)
-            goods, regulars = computer.play("0356")  # 1 regular
+            goods, regulars = computer.ask("0356")  # 1 regular
             self.assertEqual(0, goods)
             self.assertEqual(1, regulars)
-            goods, regulars = computer.play("9831")  # 1 good and 1 regular
+            goods, regulars = computer.ask("9831")  # 1 good and 1 regular
             self.assertEqual(1, goods)
             self.assertEqual(1, regulars)
-            goods, regulars = computer.play("1243")  # 2 goods and 2 regulars
+            goods, regulars = computer.ask("1243")  # 2 goods and 2 regulars
             self.assertEqual(2, goods)
             self.assertEqual(2, regulars)
-            goods, regulars = computer.play("1234")  # 4 goods and you win!
+            goods, regulars = computer.ask("1234")  # 4 goods and you win!
             self.assertEqual(4, goods)
             self.assertEqual(0, regulars)
 

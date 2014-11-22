@@ -17,7 +17,7 @@ class Game(object):
 	def playHuman(self):
 		#while True:
 		humanGuessNumber = self.humanInput()
-		humanGoods, humanRegulars = self.computer.play(humanGuessNumber)
+		humanGoods, humanRegulars = self.computer.ask(humanGuessNumber)
 		if humanGoods == 4:
 			print "human win"
 			return True
