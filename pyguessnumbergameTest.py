@@ -70,8 +70,9 @@ class Test(unittest.TestCase):
     def testPlayGameWithComputer(self):
         print "testPlayGameWithComputer"
         
-        with mock.patch('Game.Computer.generatePosibleNumber', return_value='1234'):
-            game = Game()
+        #with mock.patch('Game.Computer.generatePosibleNumber', return_value='1234')
+        game = Game()
+        game.computer.generatePosibleNumber = mock.MagicMock(return_value='1234')
         with mock.patch('__builtin__.raw_input', return_value='1234'):
             game_end = game.playHuman()
             self.assertTrue(game_end)

@@ -5,7 +5,7 @@ class Computer(object):
 
 	guessNumber = ""
 
-	def __init__(self):
+	def generateNumber(self):
 		self.guessNumber = self.generatePosibleNumber()
 		while not numbersUtil.isCorrect(self.guessNumber):
 			self.guessNumber = self.generatePosibleNumber()
@@ -21,6 +21,8 @@ class Computer(object):
 		self.guessNumber = number
 
 	def play(self, number):
+		if self.guessNumber == "":
+			self.generateNumber()
 		goods = numbersUtil.goodNumbers(self.guessNumber, number)
 		regulars = numbersUtil.regularNumbers(self.guessNumber, number)
 
