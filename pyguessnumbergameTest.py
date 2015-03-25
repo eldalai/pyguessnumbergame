@@ -76,6 +76,11 @@ class Test(unittest.TestCase):
         with mock.patch('__builtin__.raw_input', return_value='1234'):
             game_end = game.playHuman()
             self.assertTrue(game_end)
+        game = Game()
+        game.computer.generatePosibleNumber = mock.MagicMock(return_value='1234')
+        with mock.patch('__builtin__.raw_input', return_value='4321'):
+            game_end = game.playHuman()
+            self.assertFalse(game_end)
             
 
 if __name__ == "__main__":
